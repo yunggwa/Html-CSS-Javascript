@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      box-sizing: border-box;
+      font-family: "Gowun Dodum", sans-serif;
+      outline: none;
+    }
+    h1{
+      font-family: "Noto Sans KR", sans-serif;
+      margin-bottom: 30px;
+      color: pink;
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    body{
+      background-color: #d0cbcb;
+    }
+    .wrap{
+      width: 550px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 50px 30px 30px 30px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 200px;
+    }
+    .nameWrap, .emailWrap, .telWrap{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    input{
+      width: 350px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #c3bdbd;
+    }
+    input:not([type="submit"]):hover{
+    box-shadow: 0 0 5px skyblue;
+    }
+    .telWrap{
+      margin-bottom: 20px;
+    }
+    input[type="submit"]{
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: pink;
+      color: #fff;
+      padding: 10px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover{
+      background-color: skyblue;
+    }
+    .textWrap span:not(:last-child)::after{
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 10px;
+      background-color: #4f4646;
+      margin-inline: 10px;
+    }
+    .textWrap{
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .textWrap span a{
+      color: #000;
+    }
+    .textWrap span a:hover{
+      text-decoration: underline;
+      color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>아이디 찾기</h1>
+    <form action="">
+      <div class="nameWrap">
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="emailWrap">
+        <label for="email">이메일로 찾기</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="telWrap">
+        <label for="tel">연락처로 찾기</label>
+        <input type="tel" name="tel" id="tel">
+      </div>
+
+      <input type="submit" value="아이디 찾기">
+    </form>
+  
+    <div class="textWrap">
+      <span><a href="">비밀번호 찾기</a></span>
+      <span><a href="./회원가입페이지.html">회원가입</a></span>
+      <span><a href="./로그인페이지.html">로그인하기</a></span>
+    </div>
+  </div>
+</body>
+</html>

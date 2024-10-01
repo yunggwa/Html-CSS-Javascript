@@ -13,6 +13,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      text-decoration: none;
     }
     body{
       background-color: #d0cbcb;
@@ -21,12 +22,13 @@
       font-family: "Noto Sans KR", sans-serif;
       margin-bottom: 30px;
       color: pink;
+      font-size: 50px;
     }
     .wrap{
       text-align: center;
       width: 500px;
       margin: auto;
-      padding: 50px 30px;
+      padding: 50px 30px 30px 30px;
       background-color: #fff;
       border-radius: 5px;
       margin-top: 200px;
@@ -41,7 +43,9 @@
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #c3bdbd;
-      
+    }
+    .idWrap input:hover, .pwWrap input:hover{
+      box-shadow: 0 0 5px skyblue;
     }
     input{
       margin: 5px;
@@ -80,20 +84,40 @@
     .textWrap{
       font-size: 12px;
       text-align: center;
+      margin-bottom: 20px;
     }
     .textWrap span a{
-      text-decoration: none;
       color: #000;
     }
     .textWrap span a:hover{
       text-decoration: underline;
       color: skyblue;
     }
+    .yungSns{
+    margin: 0 auto;
+    text-align: center;
+  }
+  /* .yungSns span:not(:last-child)::after{
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 10px;
+      background-color: #4f4646;
+      margin-inline: 10px;
+    } */
+  .yungSns span a{
+    margin-inline: 10px;
+    color: pink;
+  }
+  .yungSns span a:hover{
+    color: skyblue;
+    text-decoration: underline;
+  }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>로그인</h1>
+    <h1>LOGIN</h1>
     <form class="loginwrap">
       <div class="idWrap">
         <label for="id">아이디</label>
@@ -105,11 +129,16 @@
       </div>
       <input type="submit" value="로그인">
       <div class="textWrap">
-        <span><a href="#">아이디 찾기</a></span>
+        <span><a href="./아이디찾기.html">아이디 찾기</a></span>
         <span><a href="#">비밀번호 찾기</a></span>
         <span><a href="./회원가입페이지.html">회원가입</a></span>
       </div>
     </form>
+    <div class="yungSns">
+      <span><a href="http://www.instagram.com/yungwa___">instagram</a></span>
+      <span><a href="yunggwa612@gmail.com">email</a></span>
+      <span><a href="https://yunggwa.tistory.com">tistory</a></span>
+    </div>
   </div>
 </body>
 </html>
