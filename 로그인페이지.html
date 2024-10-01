@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>로그인페이지만들기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    *{
+      font-family: "Gowun Dodum", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: #d0cbcb;
+    }
+    h1{
+      font-family: "Noto Sans KR", sans-serif;
+      margin-bottom: 30px;
+    }
+    .wrap{
+      text-align: center;
+      width: 500px;
+      margin: auto;
+      padding: 50px 30px;
+      background-color: #fff;
+      border-radius: 5px;
+      margin-top: 200px;
+    }
+    .idWrap, .pwWrap{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .idWrap input, .pwWrap input{
+      width: 350px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #c3bdbd;
+      
+    }
+    input{
+      margin: 5px;
+      outline: none;
+    }
+    .pwWrap{
+      margin-bottom: 20px;
+    }
+    input[type="submit"]{
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: pink;
+      color: #fff;
+      padding: 10px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    input::placeholder{
+      padding-left: 5px;
+    }
+
+    .textWrap span:not(:last-child)::after{
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 10px;
+      background-color: #4f4646;
+      margin-inline: 10px;
+    }
+    .textWrap{
+      font-size: 12px;
+      text-align: center;
+    }
+    .textWrap span a{
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>로그인</h1>
+    <form class="loginwrap">
+      <div class="idWrap">
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요." required>
+      </div>
+      <div class="pwWrap">
+        <label for="pw">비밀번호</label>
+        <input type="password" name="pw" id="pw" placeholder="비밀번호를 입력해주세요."required>
+      </div>
+      <input type="submit" value="로그인">
+      <div class="textWrap">
+        <span><a href="#">아이디 찾기</a></span>
+        <span><a href="#">비밀번호 찾기</a></span>
+        <span><a href="#">회원가입</a></span>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
