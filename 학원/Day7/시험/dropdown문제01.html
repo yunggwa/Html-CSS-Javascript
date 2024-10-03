@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown{
+      position: relative;
+    }
+    .dropbtn:hover{
+      background-color: rgb(201, 139, 150);
+    }
+    .dropdown:hover .dropcontent{
+      display: block;
+    }
+    .dropbtn{
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .dropcontent{
+      position: absolute;
+      display: none;
+      box-shadow: 5px 5px 5px 0px #817878;
+    }
+    a{
+      text-decoration: none;
+      color: #000;
+      display: block;
+      width: 150px;
+      padding: 10px 30px;
+      background-color: #dddddd;
+    }
+    
+    a:hover{
+      background-color: #817878;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aligned Dropdown Content</h1>
+  <p>Determine whether the dropdown content should go from left to right or left with the left and right properties.</p>
+  <div class="dropdown" style="float: left;">
+    <button class="dropbtn">Left</button>
+    <div class="dropcontent" style="left: 0;">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown" style="float: right;">
+    <button class="dropbtn">right</button>
+    <div class="dropcontent" style="right: 0;">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+</body>
+</html>

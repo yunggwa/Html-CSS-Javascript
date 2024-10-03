@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .drop{
+      position: relative;
+    }
+    .drop:hover .dropCon{
+      display: block;
+    }
+
+    .dropbtn{
+      width: 50px;
+      aspect-ratio: 1;
+      background-color: pink;
+      border: none;
+    }
+    .dropbtn:hover{
+      background-color: rgb(182, 143, 150);
+    }
+    .dropCon{
+      position: absolute;
+      top: 50px;
+      right: 0;
+      display: none;
+    }
+    .dropCon a{
+      display: block;
+      width: 100px;
+      padding: 5px 10px;
+      background-color: #d3d3d3;
+      text-decoration: none;
+      color: #000;
+    }
+    .dropCon a:hover{
+      background-color: #838383;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Aligned Dropdown Content</h1>
+  <p>Determine whether the dropdown content should go from left to right or right to left with the left and right properties.</p>
+    <div class="drop" style="float: left;">
+      <button class="dropbtn">Left</button>
+      <div class="dropCon" style="left: 0;">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <div class="drop" style="float: right;">
+      <button class="dropbtn">Right</button>
+      <div class="dropCon" style="right: 0;">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+</body>
+</html>

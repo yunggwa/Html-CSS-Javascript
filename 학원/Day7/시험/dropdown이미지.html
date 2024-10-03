@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dropdown{
+      position: relative;
+    }
+    .dropdown:hover .dropcon{
+      display: block;
+    }
+    .dropbtn img{
+      width: 80px;
+      height: 50px;
+    }
+    .dropcon{
+      position: absolute;
+      top: 50px;
+      left: 0;
+      display: none;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+      box-shadow: 5px 5px 5px grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dropdown Image</h1>
+  <p>Move the mouse over the image velow to open the dropdown content.</p>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">
+      <img src="../Day6/img_5terre.jpg" alt="사진">
+    </a>
+    <a href="#" class="dropcon">
+      <img src="../Day6/img_5terre.jpg" alt="사진">
+      <p>Beautiful Cinque Terre</p>
+    </a>
+  </div>
+</body>
+</html>

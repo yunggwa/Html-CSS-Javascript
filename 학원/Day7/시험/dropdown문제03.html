@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dropdown{
+      overflow: hidden;
+    }
+    ul{
+      width: 100%;
+      float: left;
+      background-color: #000;
+      list-style: none;
+    }
+    ul > li > a{
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #fff;
+      float: left;
+    }
+    .dropcontent > a{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li class="dropcontent"><a href="#">Dropdown</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </li>
+    </ul>
+  </div>
+  <h1>Dropdown Menu inside a Navigation Bar</h1>
+  <p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+</body>
+</html>

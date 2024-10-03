@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a{
+      display: block;
+      text-decoration: none;
+    }
+    a:visited{
+      color: red;
+    }
+    a:link::after{
+      content: "-" attr(href);
+    }
+  </style>
+</head>
+<body>
+  <h1>Nothing</h1>
+  <a href="http://hanb.co.kr/">Hanbit Media</a>
+  <a href="http://www.w3.org/">W3C</a>
+  <a href="http://github.com/">Github</a>
+</body>
+</html>

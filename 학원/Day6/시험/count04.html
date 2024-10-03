@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ol{
+      counter-reset: yung;
+    }
+    li::before{
+      counter-increment: yung;
+      content: counters(yung, ".") " ";
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>item</li>
+    <li>item
+      <ol>
+        <li>item</li>
+        <li>item</li>
+        <li>item
+          <ol>
+            <li>item</li>
+            <li>item</li>
+          </ol>
+        </li>
+        <li>item
+          <ol>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+          </ol>
+        </li>
+        <li>item</li>
+      </ol>
+    </li>
+    <li>item</li>
+    <li>item</li>
+  </ol>
+  <ol>
+    <li>item</li>
+    <li>item</li>
+  </ol>
+</body>
+</html>

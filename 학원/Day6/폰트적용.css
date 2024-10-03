@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&family=Moirai+One&family=Nanum+Pen+Script&display=swap');
+h1{
+
+  font-family: "Black Han Sans";
+}
+h2{
+  font-family: "Nanum Pen Script";
+  font-size: 50px;
+}
+h3{
+  font-family: "Gugi";
+  font-size: 100px;
+}
+h3:nt

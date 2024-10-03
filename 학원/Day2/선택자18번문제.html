@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+      list-style: none;
+      padding: 20px;
+    }
+
+    li:nth-child(2n) {
+      background-color: pink;
+      color: white;
+    }
+
+    li:nth-child(2n+1) {
+      background-color: skyblue;
+      color: darkblue;
+    }
+
+    li:nth-child(4) {
+      color: aqua;
+    }
+
+    li:nth-child(4):hover {
+      background-color: red;
+      color: white;
+      font-size: 50px;
+      padding: 50px;
+      border-radius: 50px;
+    }
+
+    li:first-child {
+      border-radius: 15px 0 0 15px;
+    }
+
+    li:last-child {
+      border-radius: 0 15px 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>첫 번쨰</li>
+    <li>두 번쨰</li>
+    <li>세 번쨰</li>
+    <li>네 번쨰</li>
+    <li>다섯 번쨰</li>
+    <li>여섯 번쨰</li>
+    <li>일곱 번쨰</li>
+  </ul>
+</body>
+
+</html>

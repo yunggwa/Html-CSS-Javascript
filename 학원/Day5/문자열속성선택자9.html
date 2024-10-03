@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* img:nth-child(1){
+      border: 1px solid red;
+    }
+    img:nth-child(2){
+      border: 1px solid rgb(52, 3, 187);
+    }
+    img:nth-child(3){
+      border: 1px solid rgb(0, 46, 2);
+    } */
+    [src$="png"]{
+      border: 2px solid red;
+    }
+    [src$="jpg"]{
+      border: 2px solid rgb(0, 133, 44);
+    }
+    [src$="gif"]{
+      border: 2px solid rgb(0, 17, 255);
+    }
+  </style>
+</head>
+<body>
+  <img src="./jajq.png" width="200" height="300" />
+  <img src="./node.jpg" width="200" height="300" />
+  <img src="./ux.gif" width="200" height="300" />
+</body>
+</html>

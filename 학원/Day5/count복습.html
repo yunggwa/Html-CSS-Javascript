@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      counter-reset: section 5;
+    }
+    p::before{
+      counter-increment: section;
+      content: "section" counter(section) ": ";
+    }
+  </style>
+</head>
+<body>
+  <p>Introduction</p>
+  <p>Body</p>
+  <p>Conclusion</p>
+</body>
+</html>

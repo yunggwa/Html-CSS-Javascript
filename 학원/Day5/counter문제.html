@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      counter-reset: yung;
+    }
+    a[href]{
+      counter-increment: yung; 
+    }
+
+    a[href]:empty::after{
+      content: "["counter(yung)"]";
+    }
+    
+  </style>
+</head>
+<body>
+  <p>See <a href="https://www.mozilla.org/"></a></p>
+  <p>Do not forget to <a href="contact-me.html">leave a message</a>!</p>
+  <p>See also <a href="https://developer.mozilla.org/"></a></p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dropdown{
+     position: relative;
+    }
+    button{
+     cursor: pointer;
+     border: none;
+     width: 150px;
+     height: 50px;
+     background-color: pink;
+     color: white;
+    }
+    .dropdown:hover button{
+     background-color: rgb(206, 153, 162);
+    }
+    .dropdown_contents{
+     position: absolute;
+     display: none;
+     box-shadow: 5px 5px 5px #918e8e;
+    }
+    a{
+     display: block;
+     text-decoration: none;
+     color: black;
+     padding: 10px;
+     background-color: #ffffff;
+    }
+    .dropdown:hover .dropdown_contents{
+     display: block;
+    }
+    .dropdown_contents a:hover{
+     background-color: #c4bebe;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dropdown Menu</h1>
+  <p>Move the mouse over the button to open the dropdown menu.</p>
+  <div class="dropdown">
+    <button>dropdown</button>
+    <div class="dropdown_contents">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <p>
+    <strong>Note:</strong>
+    We use href="#" for test links. In a real web site this would be URLs.
+  </p>
+</body>
+</html>

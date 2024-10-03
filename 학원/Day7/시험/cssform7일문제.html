@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+    h1{
+      margin-bottom: 20px;
+    }
+    form{
+      background-color: rgb(219, 219, 219);
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: auto;
+    }
+    input, select{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+    input[type="submit"]{
+      background-color: pink;
+      color: #fff;
+      border: none;
+    }
+    input[type="submit"]:hover{
+      background-color: rgb(185, 125, 134);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Using CSS to style an HTML Form</h1>
+    <form action="">
+      <label for="fname">First Name</label>
+      <input type="text" name="fname" id="fname" placeholder="Your name...">
+
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" id="lname" placeholder="Your last name...">
+      
+      <label for="aaa">Country</label>
+      <select name="aaa" id="aaa">
+        <option value="Australia">Australia</option>
+        <option value="Canada">Canada</option>
+        <option value="USA">USA</option>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

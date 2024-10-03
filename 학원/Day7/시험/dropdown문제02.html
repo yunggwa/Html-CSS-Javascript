@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dropdown{
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn{
+      border: none;
+      padding: 0;
+      opacity: 50%;
+    }
+    .dropbtn:hover{
+      opacity: 100%;
+    }
+    .dropdown:hover .dropcontent{
+      display: block;
+    }
+    .dropcontent{
+      position: absolute;
+      display: none;
+      box-shadow: 5px 5px 5px #d9d9d9;
+      top: 70px;
+      left: 0;
+    }
+    .dropcontent p{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dropdown Image</h1>
+  <p>move the mouse over the image below to open the dropdown content.</p>
+  <div class="dropdown">
+    <button class="dropbtn"><img src="./img_5terre.jpg" alt="풍경사진" style="width: 100px;"></button>
+    <div class="dropcontent">
+      <img src="./img_5terre.jpg" alt="풍경사진">
+      <p>Beautiful Cinque Terre</p>
+    </div>
+  </div>
+</body>
+</html>

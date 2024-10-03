@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./레이아웃문제다시.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // $('.tapmenu > a').Click(function(){
+      //   e.preventDefault();
+      //   const target = $(this).attr('href');
+      //   $(this).addClass('on').siblings('a').removeClass('on');
+      //   $(target).addClass('on').siblings('.tapcon').removeClass('on');
+      // });
+
+      $('.tapmenu a').click(function(){
+        const tabId = $(this).attr('href');
+
+       // alert(tabId);
+
+       $('.tapmenu a').removeClass('on');
+       $(this).addClass('on');
+
+       $('.tapcon').removeClass('on');
+       $(tabId).addClass('on');
+
+       return false;
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topmenu">
+        <ul>
+          <li><a href="#">Web</a></li>
+          <li><a href="#">Mobile</a></li>
+          <li><a href="#">Game</a></li>
+          <li><a href="#">Simulation</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
+      </div>
+      <h1>Rint Development <br>
+          HTML5 + CSS3 Basic
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="#">HTML5</a></li>
+          <li><a href="#">CSS3</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">jQuery</a></li>
+          <li><a href="#">Node.js</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <ul class="mainContent">
+        <li>
+          <h2>Main Article</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor. Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
+        </li>
+        <li>
+          <h2>Main Article</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor. Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
+        </li>
+        <li>
+          <h2>Main Article</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor. Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
+        </li>
+      </ul>
+      <aside>
+        <div class="tapmenu">
+          <a href="#tapContent1" class="on">First</a>
+          <a href="#tapContent2">Second</a>
+        </div>
+        <div id="tapContent1" class="tapcon on">
+          <ul>
+            <li>
+              <a href="">
+                <img src="http://via.placeholder.com/45x45" alt="">
+                <div class="tc">
+                  <p class="tcTitle">HTML5 Canvas</p>
+                  <p class="tcDate">2012-03-15</p>
+                </div>
+              </a></li>
+              <li>
+                <a href="">
+                  <img src="http://via.placeholder.com/45x45" alt="">
+                  <div class="tc">
+                    <p class="tcTitle">HTML5 Audio</p>
+                    <p class="tcDate">2012-03-15</p>
+                  </div>
+                </a></li>
+                <li>
+                  <a href="">
+                    <img src="http://via.placeholder.com/45x45" alt="">
+                    <div class="tc">
+                      <p class="tcTitle">HTML5 Video</p>
+                      <p class="tcDate">2012-03-15</p>
+                    </div>
+                  </a></li>
+                  <li>
+                    <a href="">
+                      <img src="http://via.placeholder.com/45x45" alt="">
+                      <div class="tc">
+                        <p class="tcTitle">HTML5 Semantic</p>
+                        <p class="tcDate">2012-03-15</p>
+                      </div>
+                    </a></li>
+          </ul>
+        </div>
+        <div id="tapContent2" class="tapcon">
+          <ul>
+            <li>
+              <a href="">
+                <img src="http://via.placeholder.com/45x45" alt="">
+                <div class="tc">
+                  <p class="tcTitle">CSS3 Transition</p>
+                  <p class="tcDate">2012-03-15</p>
+                </div>
+              </a></li>
+              <li>
+                <a href="">
+                  <img src="http://via.placeholder.com/45x45" alt="">
+                  <div class="tc">
+                    <p class="tcTitle">CSS3 Animation</p>
+                    <p class="tcDate">2012-03-15</p>
+                  </div>
+                </a></li>
+                <li>
+                  <a href="">
+                    <img src="http://via.placeholder.com/45x45" alt="">
+                    <div class="tc">
+                      <p class="tcTitle">CSS3 Border</p>
+                      <p class="tcDate">2012-03-15</p>
+                    </div>
+                  </a></li>
+                  <li>
+                    <a href="">
+                      <img src="http://via.placeholder.com/45x45" alt="">
+                      <div class="tc">
+                        <p class="tcTitle">CSS3 Box</p>
+                        <p class="tcDate">2012-03-15</p>
+                      </div>
+                    </a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+    <footer>
+      <h2>HTML5 + CSS3 Basic</h2>
+      <p>Website Layout Basic</p>
+    </footer>
+  </div>
+</body>
+</html>

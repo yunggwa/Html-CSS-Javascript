@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&family=Moirai+One&family=Nanum+Pen+Script&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.topmenu ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.topmenu ul li {
+  background-color: pink;
+  overflow: hidden;
+}
+
+.topmenu ul li:first-child {
+  border-radius: 50px 0 0 50px;
+}
+
+.topmenu ul li:last-child {
+  border-radius: 0 50px 50px 0;
+}
+
+.topmenu ul li a {
+  display: block;
+  padding: 2px 6px;
+  color: #fff;
+}
+
+.topmenu ul li a:hover {
+  background-color: #6d4545;
+  color: #fff;
+}
+
+h1 {
+  font-family: "Gugi";
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  background-color: pink;
+  border: 0.5px solid #bbb3b3;
+  overflow: hidden;
+}
+
+nav ul li:first-child {
+  border-radius: 50px 0 0 50px;
+}
+
+nav ul li:last-child {
+  border-radius: 0 50px 50px 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  background-color: #6d4545;
+}
+
+/* section */
+section {
+  display: flex;
+}
+
+.mainContent {
+  margin-right: 10px;
+}
+
+.mainContent li {
+  border: 1px solid #e78888;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.mainContent li h2 {
+  font-family: "Gugi";
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #683636;
+}
+
+.mainContent li p {
+  color: #756a6a;
+}
+
+aside {
+  /* border: 1px solid #e78888; */
+  border-radius: 5px;
+  text-align: center;
+  height: 310px;
+}
+
+.tapmenu {
+  display: flex;
+  width: 200px;
+}
+
+.tapmenu a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: pink;
+  color: #fff;
+  border: 1px solid #e78888;
+  border-bottom: none;
+}
+
+.tapmenu a:first-child {
+  border-radius: 3px 0 0 0;
+  border-right: 0;
+}
+
+.tapmenu a:last-child {
+  border-radius: 0 3px 0 0;
+}
+
+.tapmenu a:hover {
+  background-color: #858585;
+}
+
+.tapmenu a.on {
+  background-color: #858585;
+}
+
+.tapcon {
+  padding: 0 10px;
+  border: 1px solid #e78888;
+  border-top:0;
+  border-radius: 0 0 5px 5px;
+}
+
+.tapcon ul li {
+  padding: 10px;
+}
+
+.tapcon ul li a {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.tapcon ul li a .tc{
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tapcon ul li a .tc .tcTitle {
+  font-size: 12px;
+}
+
+.tapcon ul li a .tc .tcDate {
+  font-size: 10px;
+}
+
+.tapcon {
+  display: none;
+}
+
+.tapcon.on {
+  display: block;
+}
+
+
+
+/* footer */
+footer {
+  border: 1px solid #e78888;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  color: #683636;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+}

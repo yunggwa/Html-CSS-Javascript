@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="./test.js"></script> -->
+</head>
+<body>
+  <script>
+    let yung = 1;
+    // console.log("yung"); //콘솔은 디버깅용도로 많이 쓴다
+    // document.write("yung" + yung);
+    // typeop 라는 속성을 쓰면 내가 쓴게 어떤 타입인지 출력된다
+
+    for(let i = 1; i <= 10; i++){
+
+      document.write((i) + ". " + "나는 권윤경" +"<br>");
+    }
+    let sum = 0;
+    for(let a = 1; a <= 100; a++){
+      if(a % 2 !== 0){
+        continue
+      }
+      sum = sum + a;
+      console.log(sum);
+    }
+    cnt = 0;
+    for(let b = 1; b <= 100; b++){
+      if(b % 4 === 0){
+        cnt++
+      }
+      console.log(cnt);
+    }
+
+    cnt = 0;
+    sev = 0;
+    for(let c = 1; c <= 100; c++){
+      if(c % 7 === 0){
+        sev = sev + c
+      }
+      console.log();     
+    }
+    // let cnt = 0;
+    // for(let b = 1; b <=100; b=b*4){
+    //   cnt++
+    //   console.log(cnt);
+    // }
+    //1. 각각의 수를 구한다
+    //2. 각 수를 더 한다
+    //3. 100까지의 합을 더한다
+
+  </script>
+</body>
+</html>

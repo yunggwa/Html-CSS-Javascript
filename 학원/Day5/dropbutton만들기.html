@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dropdown{
+      position: relative;
+    }
+    .dropdown:hover button{
+      background-color: #51569e;
+    }
+    button{
+      width: 200px;
+      height: 100px;
+      background-color: #1726ff;
+      color: white;
+      border: none;
+    }
+    .dropdown:hover .dropContents{
+      transition: 0.5s ease-in-out;
+      height: 200px;
+    }
+    .dropContents{
+      position: absolute;
+      overflow: hidden;
+      height: 0;
+    }
+    .dropContents a{
+      display: block;
+      text-decoration: none;
+      background-color: pink;
+      color: white;
+      padding: 10px;
+    }
+    .dropContents a:hover{
+      background-color: #fff;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <button>yung</button>
+    <div class="dropContents">
+      <a href="#">권</a>
+      <a href="#">윤</a>
+      <a href="#">경</a>
+    </div>
+  </div>
+</body>
+</html>

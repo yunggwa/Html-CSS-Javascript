@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      background-color: #d9d9d9;
+      border-radius: 5px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    form{
+      width: 100%;
+    }
+
+    input[type="text"], select{
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #918f8f;
+      box-sizing: border-box;
+    }
+    input::placeholder{
+      padding: 10px;
+    }
+    input[type="submit"]{
+      width: 100%;
+      background-color: pink;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+
+    }
+    label{
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Using CSS to style an HTML Form</h1>
+  <div>
+    <form action="">
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" name="firstname" placeholder="Your name...">
+
+      <label for="LastName">Last Name</label>
+      <input type="text" id="Last Name" name="Last Name" placeholder="Your last name...">
+
+      <label for="aaa">Country</label>
+      <select name="aaa" id="aaa">
+        <option value="">Australia</option>
+        <option value="">Canada</option>
+        <option value="">USA</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

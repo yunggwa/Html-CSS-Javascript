@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{
+      counter-increment: yung;
+    }
+    p::before{
+      content: counter(yung) ".";
+    }
+    p::after{
+      content: "-" attr(data-page) "page";
+    }
+  </style>
+</head>
+<body>
+  <h1>Lorem ipsum dolor sit amet</h1>
+  <p data-page="52">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <p data-page="273">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+</body>
+</html>
