@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function factorial(num){
+      if(num < 2){
+        document.write(num);
+      }else{
+        let result = num % 2;
+        
+        factorial(Math.floor(num / 2));
+        document.write(result);
+      }
+
+    }
+    document.write(factorial(5));
+  </script>
+</body>
+</html>

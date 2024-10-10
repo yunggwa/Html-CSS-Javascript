@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td{
+      border: 1px solid pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="yung"></div>
+  <script>
+    let now = new Date(); // 인수를 주지 않으면 오늘 날짜를 기준으로 date객체를 만든다.
+    let year = now.getFullYear();
+    let month = now.getMonth();
+
+    let lastDay = getLastDayOfTheMonth();
+    let nowTemp = new Date(year, month, 1); // 1일의 요일을 알기 위해서 만든 것!
+    let firstDayWeek = nowTemp.getDay(); // getDay메소드를 쓰게 된다면 요일을 반환
+    
+    let numOfWeeks = Math.ceil((firstDayWeek + lastDay) / 7); // 올림하는 메소드를 써준다 달력을 몇 줄을 출력할지 정하는 코드 기획적인면!
+
+    let cell = 0; // 공백을 출력하기 위한 변수
+    let date = 1; // 날짜를 출력하기 위한 변수 
+
+    function getLastDayOfTheMonth(){ //교육적인 목적상 달의 마지막 날을 가져오게끔  전 달의 마지막 날
+      let lastDayOfTheMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      let leapYear = true;
+
+      if((year % 4 === 0) && (year % 100 !== 0)){
+        leapYear = true;
+      }else if(year % 400 === 0){
+        leapYear = true;
+      }else{
+        leapYear = false;
+      }
+      lastDayOfTheMonth[1] = leapYear ? 29 : 28; // 윤년을 알아보기위한 삼항연산자
+
+      return lastDayOfTheMonth[month]; 
+    }
+
+    let table = `<table>`;
+    
+    table += `<caption> ${year}년 ${month + 1}월 </caption>`;
+    let dayOfTheWeek = ['일', '월', '화', '수', '목', '금', '토'];
+    table = `<tr>`;
+
+    for(let i = 0; i < dayOfTheWeek.length; i++){
+      table += `<th> ${dayOfTheWeek[i]} </th>`;
+    }
+    table += `</tr>`;
+
+    for(let i = 0; i < numOfWeeks; i++){
+      table += `<tr>`
+      for(let j = 0; j < 7; j++){
+        if(cell < firstDayWeek){
+          table += `<td>&nbsp;</td>`;
+        }else if(date <= lastDay){
+          table += `<td> ${date++}</td>`;
+        }else{
+          table += `<td>&nbsp;</td>`; // 남은 자리는 공백으로 출력
+
+        }
+          cell++;
+      }
+      table += `</tr>`;
+    }
+
+
+    table += `</table>`;
+
+    document.getElementById('yung').innerHTML = table;
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let yung = prompt("가위, 바위, 보 중에 하나를 입력하시오");
+
+    switch(yung){
+      case "가위" : {
+
+        break;
+      }
+      case "바위" : {
+        alert();
+        break;
+      }
+      case "보" : {
+        alert();
+        break;
+      }
+      default : {
+        
+      }
+
+      
+    }
+    let random = {
+      "가위" : 1,
+      "바위" : 2,
+      "보" : 3,
+    }
+    function abc(yung){
+      if(1 < 2){
+        document.write("당신은 졌습니다");
+      }else if(1 > 2){
+        document.write("당신은 이겼습니다");
+      }else if(2 < 3){
+        document.write("당신은 이겼습니다");
+      }else if(2 > 3){
+        document.write("당신은 졌습니다");
+      }else if(3 > 1){
+        document.write("당신은 졋습니다");
+      }else if(3 < 1){
+        document.write("당신은 이겼습니다");
+      }else{  
+        document.write("당신은 비겼습니다");
+      }
+
+    }
+    
+
+    document.write(abc(random));
+  </script>
+</body>
+</html>

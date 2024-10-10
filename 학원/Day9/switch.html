@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <input type="text" id="menu" placeholder="메뉴 번호를 입력">
+  <button onclick="menuSelect()">선택</button>
+  <p>Menu<br>1. 피자<br>2. 스파게티<br>3. 햄버거<br>4. 스프<br></p>
+  <script>
+    function menuSelect() {
+      let menu = document.getElementById("menu").value;
+      switch(menu) {
+        case "1":
+          document.write("당신은 피자를 선택하셨습니다.<br>");
+          break;
+        case "2":
+          document.write("당신은 스파게티를 선택하셨습니다.<br>");
+          break;
+        case "3":
+          document.write("당신은 햄버거를 선택하셨습니다.<br>");
+          break;
+        case "4":
+          document.write("당신은 스프를 선택하셨습니다.<br>");
+          break;
+        default:
+          document.write("당신은 잘못 선택하셨습니다.<br>");
+      }
+    } 
+  </script> -->
+  <script>
+    let yung = parseInt(prompt("1.피자 2.스파게티 3.햄버거 4.스프"));
+
+    if(yung === 1){
+      document.write("당신은 피자를 선택하셨습니다");
+    } else if(yung === 2){
+      document.write("당신은 스파게티를 선택하셨습니다");
+    } else if(yung === 3){
+      document.write("당신은 햄버거를 선택하셨습니다");
+    } else if(yung === 4){
+      document.write("당신은 스프를 선택하셨습니다");
+    } else{
+      document.write("당신은 잘못 선택하셨습니다");
+    }
+  </script>
+</body>
+</html>           

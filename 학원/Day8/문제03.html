@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let yung = parseInt(prompt('원하는 숫자를 입력하시오'));
+
+    // if(yung > 1){
+    //   document.write('소수입니다');
+    // }else{
+    //   document.write('소수가 아닙니다');
+    // }
+
+    // (yung > 1 ? document.write('소수입니다' ) : document.write('소수가 아닙니다'));
+
+      // (1 % yung === 0 && 1 % yung !== 0)
+      // document.write('소수입니다');
+
+      // for(let i = 2 ; i < yung; i++){
+      //   if(yung === 1) {continue;
+          
+      //   }if(yung % i === 0){
+      //     document.write('소수입니다');
+      //   }else{
+      //     document.write('소수가 아닙니다');
+      //   }
+        
+      // }
+
+      for(let i = 2; i < yung; i++){
+        if(yung % i === 0) break;
+      }
+      if(yung === i){
+        document.write(`${yung}은 소수`);
+      }else{
+        document.write(`${yung}은 소수 아님`);
+      }
+
+      let flag = true; //모든 숫자는 소수 라고 생각가정
+      
+  </script>
+</body>
+</html>

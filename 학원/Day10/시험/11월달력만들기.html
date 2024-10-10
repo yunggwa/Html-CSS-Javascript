@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, td, th, tr{
+      border: 1px solid pink;
+      color: brown;
+    }
+  </style>
+</head>
+<body>
+  <div id="yung"></div>
+  <script>
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const lastDay = lastDayOfMonth();
+    const nowYung = new Date(year, month, 1);
+    const firstDayOfTheWeek = nowYung.getDay();
+
+    let numWeeks = Math.ceil((firstDayOfTheWeek + lastDay) / 7);
+    let cell = 0;
+    let date = 1;
+
+    function lastDayOfMonth(){
+      const lastDayMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      let leapYear = true;
+      if((year % 3 === 0) && (year % 100 !== 0)){
+        leapYear = true;
+      }else if(year % 400 === 0){
+        leapYear = true;
+      }else{
+        leapYear = false;
+      }
+      lastDayMonth[1] = leapYear ? 29 : 28;
+      return lastDayMonth[month];
+    }
+
+    function getTime (){
+      let nowday = now.getDate();
+      let nowmin = now.getMinutes();
+      let ampm;
+      let hours = now.getHours();
+      if(hours >= 12){
+        hours -= 12;
+        ampm = "오후";
+      }else{
+        ampm = "오전";
+      }
+
+      hours = (hours === 0) ? 12 : hours;
+      if(nowmin < 10){
+        nowmin = "0" + nowmin;
+      }
+      return ampm + hour + ":" + nowmin;
+    }
+
+    let table = `<table>`;
+    table += `<caption> ${year}년 ${month + 1}월</caption>`;
+    table += `<tr>`;
+    
+    const dayWeek = ["일", "월", "화", "수", "목", "금", "토"];
+    for(let i = 0; i < dayWeek.length; i++){
+      table += `<th>${dayWeek[i]}</th>`;
+    }
+    table += `<t/r>`;
+
+    for(let i = 0; i < numWeeks; i++){
+      table += `<tr>`;
+
+      for(let j = 0; j < 7; j++){
+        if(cell < firstDayOfTheWeek){
+          table += `<td>&nbsp;</td>`;
+        }else if(date <= lastDay){
+          table += `<td> ${date}`;
+            if(date === now.getDate()){
+              table += `<br>${getTime()}`;
+            }table += `</td>`;
+            date++;
+          }else{
+            table += `<td>&nbsp;</td>`;
+          }
+          cell;
+        }
+        table += `</tr>`;
+        
+    }
+    table += `</table>`;
+    document.getElementById("yung").innerHTML = table;
+
+
+  </script>
+</body>
+</html>

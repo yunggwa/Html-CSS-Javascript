@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>달력3</title>
+    <style>
+      .wrap{
+        margin: 0 auto;
+        text-align: center;
+      }
+      .demo{
+        margin: 0 auto;
+        padding-top: 60px;
+        display: inline-block;
+      }
+      table {
+        border: 2px solid pink;
+        border-collapse: collapse;
+        color: brown;
+      }
+      caption {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      th {
+        background: pink;
+        font-size: 14px;
+        height: 20px !important;
+      }
+      th,
+      td {
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid pink;
+        padding: 5px;
+        width: 80px;
+        height: 40px;
+        color: brown;
+      }
+      .btnBox {
+        margin-top: 10px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%);
+      }
+      .btnBox button {
+        cursor: pointer;
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-radius: 50px;
+        background: skyblue;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+    <div class="demo"></div>
+    <div class="btnBox">
+      <button onclick="prevBtn()">이번달</button>
+      <button onclick="nextBtn()">다음달</button>
+    </div>
+  </div>
+
+    <script>
+      let now = new Date();
+      let year = now.getFullYear();
+      let month = now.getMonth();
+
+      function cal() {
+        let firstDayNum = new Date(year, month, 1);
+        let firstDay = firstDayNum.getDay();
+
+        let lastDateNum = new Date(year, month, 0).getDate();
+        let lastDate = new Date(year, month + 1, 0).getDate();
+
+        let numOfWeeks = Math.ceil((firstDay + lastDate) / 7);
+
+        let cell = 0;
+        let date = 1;
+
+        //오늘날짜 시간 출력
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let ampm;
+
+        if (hour >= 12) {
+          hour -= 12;
+          ampm = "오후";
+        } else {
+          ampm = "오전";
+        }
+
+        if (minute < 10) minute = "0" + minute;
+
+        let dayName = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+
+        let table = "<table>";
+        table += `<caption>${year}년 ${month + 1}월</caption>`;
+        table += `<tr>`;
+
+        for (let i = 0; i < dayName.length; i++) {
+          table += `<th>${dayName[i]}</th>`;
+        }
+        table += `</tr>`;
+
+        for (let i = 0; i < numOfWeeks; i++) {
+          table += `<tr>`;
+          for (let j = 0; j < 7; j++) {
+            if (cell < firstDay) table += `<td>&nbsp</td>`;
+            else if (date <= lastDate) {
+              let currentDate = new Date(year, month, date);
+              if (
+                currentDate.getFullYear() === new Date().getFullYear() && //년도 확인
+                currentDate.getMonth() === new Date().getMonth() && //월 확인
+                currentDate.getDate() === new Date().getDate()
+              ) {
+                table += `<td>${date++}<br>${ampm} ${hour}:${minute}</td>`;
+              } else {
+                table += `<td>${date++}</td>`;
+              }
+            } else table += `<td>&nbsp</td>`;
+
+            cell++;
+          }
+          table += `</tr>`;
+        }
+        table += "</table>";
+
+        document.querySelector(".demo").innerHTML = table;
+      }
+      cal();
+
+      function prevBtn() {
+
+        if (month === 0) {
+          month = 12;
+          year = year - 1;
+        }
+        month = month - 1;
+
+        cal();
+      }
+
+      function nextBtn() {
+
+        if (month > 11) {
+          month = 0;
+          year = year + 1;
+        }
+        month = month + 1;
+
+        cal();
+      }
+    </script>
+  </body>
+</html>

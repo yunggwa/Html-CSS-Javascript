@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td{
+      border: 1px solid pink;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="yung"></div>
+  <script>
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const lastDay = LastDayOfMonth(); // 마지막 날을 알기 위한 함수만들기
+    const nowYung = new Date(year, month, 1); //1일의 요일을 알기 위해!
+    const firstDay = nowYung.getDay(); // 현재 날짜의 현재요일반환
+
+    let numWeeks = Math.ceil((firstDay + nowYung) / 7); // 달력의 줄 결정
+    let cell = 0; //공백
+    let date = 1; //날짜
+    
+    function LastDayOfMonth(){
+      let lastDayOfTheMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      let leapYear = true;
+      if((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)){
+        leapYear = true;
+      }else{
+        leapYear = false;
+      }
+      lastDayOfTheMonth[1] = leapYear ? 29 : 28;
+      return lastDayOfTheMonth[month];
+    }
+
+    let table = `<table>`;
+    table += `<caption> ${year}년 ${month + 1}월 </caption>`; //month에 +1을 하는건 0부터시작이라
+    let dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
+
+    table += `<tr>`;
+
+    for(let i = 0; i < dayOfWeek.length; i++){
+      table += `<th> ${dayOfWeek[i]} </th>`;
+    }
+    table += `</tr>`;
+
+    for(let i = 0; i < numWeeks; i++){
+      table += `<tr>`;
+
+        for(let j = 0; j < 7; j++){
+          if(cell < firstDay){
+            table += `<td> &nbsp; </td>`;
+          }else if(date <= lastDay){
+            table += `<td> ${date++} </td>`;
+          }else{
+            table += `<td> &nbsp; </td>`;
+          }
+          cell++;
+        }
+        table += `</tr>`;
+    }
+    table += `</table>`;
+    document.getElementById("yung").innerHTML = table;
+    
+    document.getElementById("yung").style
+
+    document.write(nowYung.getTime());
+    
+  </script>
+</body>
+</html>

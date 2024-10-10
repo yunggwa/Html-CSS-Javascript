@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="pic" src=".././시험/pic_bulboff.gif" alt="">
+  <script>
+    function yung(num){
+      
+      if(num === 0){
+        img = ".././시험/pic_bulbon.gif"
+      }else{
+        img = ".././시험/pic_bulboff.gif"
+      }
+      document.getElementById("pic").src=img
+      }
+  </script>
+  <button type="button" onclick="yung(0)">Light On!</button>
+  <button type="button" onclick="yung(1)">Light Off!</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function findMatryoshka(matryoshka, size){
+      if(matryoshka.size === size){
+        return true;
+      }
+      
+      if(matryoshka.matryoshka){
+        return findMatryoshka(matryoshka.matryoshka, size);
+      }
+      return false;
+    }
+
+    document.write(findMatryoshka(matryoshka, 10));
+  </script>
+</body>
+</html>

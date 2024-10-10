@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function plus(num1, num2){
+      return num1 + num2;
+    }
+    
+    function mius(num1, num2){
+      return num1 - num2;
+    }
+    function kk (num1, num2){
+      return num1 * num2;
+    }
+    function nn(num1, num2){
+      return num1 / num2;
+    }
+    function pp(num1, num2){
+      return num1 % num2;
+    }
+    let j = 0;
+    function number(num){
+      let i = num;
+        for(j = 1; j < 10; j++){
+
+          console.log(i + "x" + j + "=" + (i * j) + "<br>");
+        
+      }
+    }
+
+    function plusNum(numf, nume){
+      for(let k = numf; k <= nume; k++){
+        for(j = 1; j < 10; j++){
+          document.write(k + "x" + j + "=" + (k * j) + "<br>");
+        }
+      }
+    }
+
+
+    number(3);
+
+    plusNum(3, 5);
+  </script>
+</body>
+</html>

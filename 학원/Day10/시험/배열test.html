@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [];
+    for(let i = 0; i < 5; i++){
+      let num = prompt(`${i+1}번째 숫자를 입력하세용`);
+      arr.push(num);
+    }
+    // document.write([arr] + '<br>');
+    
+    // document.write(arr.length + '<br>');
+    // document.write(arr[0] + '<br>');
+
+    for(let i = 0; i < arr.length; i++){
+      document.write(arr[i] + '  ');
+    }
+
+    let yung = [
+      "윤경",
+      10,
+      function yun(){},
+      {},
+    ];
+  </script>
+</body>
+</html>

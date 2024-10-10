@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id=""></h1>
+  <script>
+  let yung = new Date();
+  let month = yung.getMonth();
+  let day = yung.getDay();
+  let year = yung.getFullYear();
+  document.write(yung);
+
+  document.write('<table border = 1>');
+    // document.write('<tr>')
+    for(let j = 0; j < 5; j++){
+      document.write('<tr>' + j);
+        for(let i = 1; i <= 31; i++){
+          document.write('<td>' + i);
+        }
+        document.write('</tr>');
+      }
+  document.write('</table>');
+
+  document.write(day);
+  </script>
+</body>
+</html>

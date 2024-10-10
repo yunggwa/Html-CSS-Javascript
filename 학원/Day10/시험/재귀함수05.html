@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function fiv(num){
+      if(num === 1 || num === 2){
+        return 1;
+      }
+      return fiv(num - 1) + fiv(num - 2);
+    }
+    document.write(fiv(6));
+  </script>
+</body>
+</html>
