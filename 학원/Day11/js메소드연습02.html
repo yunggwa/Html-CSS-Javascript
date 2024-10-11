@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.sort();
+    document.write(fruits + '<br>');
+
+    fruits.reverse();
+    document.write(fruits + '<br>');
+
+    const points = [40, 100, 1, 5, 25, 10];
+
+    points.sort((a,b) => {return a - b;});
+    document.write(points + '<br>');
+
+    points.sort((a,b) => {return b - a;});
+    document.write(points + '<br>');
+
+
+    function random(arr){
+      return arr.sort(() => Math.random() - 0.5);
+    }
+    let pointsRandom = random(points);
+    document.write(pointsRandom + '<br>');
+
+    points.sort((a,b) => {return a - b;});
+    document.write(points[0] + '<br>');
+
+    points.sort((a,b) => {return b - a;});
+    document.write(points[0]);
+  </script>
+</body>
+</html>

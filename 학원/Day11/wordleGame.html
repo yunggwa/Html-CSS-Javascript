@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-color: #ffe3e3;
+    }
+    h1{
+      text-align: center;
+      margin-top: 100px;
+      color: brown;
+    }
+    .wrap{
+      display: flex;
+      width: 375px;
+      margin: 0 auto;
+    }
+
+    input{
+      width: 50px;
+      aspect-ratio: 1;
+      outline: none;
+      border: 1px solid brown;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 30px;
+      margin: 5px;
+      color: brown;
+    }
+    button{
+      width: 50px;
+      aspect-ratio: 1;
+      background-color: pink;
+      border: none;
+      border-radius: 10px;
+      margin: 5px;
+      font-size: 15px;
+      color: brown;
+    }
+    .newInput{
+      width: 375px;
+      margin: 0 auto;
+    }
+    .newInput input{
+      margin: 3.5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wordle Game</h1>
+  <div class="wrap">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+
+    <button>제출</button>
+  </div>
+  <script>
+    let correct = 'button';
+    
+    document.querySelector("button").addEventListener("click",
+      function(){
+        let input = document.querySelectorAll(".input");
+
+        for(let i = 0; i < 5; i++){
+          if(input[i].value === correct[i]){
+            input[i].style.background = 'pink'
+          }else if(correct.includes(input[i].value )){
+            input[i].style.background = 'skyblue'
+          }else{
+            input[i].style.background = 'grey'
+          }
+          input[i].classList.remove('input');
+        }
+        
+        let tem = `<div class='newInput'>
+          <input class="input" maxlength="1">
+          <input class="input" maxlength="1">
+          <input class="input" maxlength="1">
+          <input class="input" maxlength="1">
+          <input class="input" maxlength="1">
+          </div>`
+          document.querySelector("body").insertAdjacentHTML("beforeend", tem);
+      });
+    
+  </script>
+</body>
+</html>

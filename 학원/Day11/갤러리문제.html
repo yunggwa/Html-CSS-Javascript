@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div class="image">
+    <img src="./images/pic_1.jpg" alt="사진1">
+    <img src="./images/pic_2.jpg" alt="사진2">
+    <img src="./images/pic_3.jpg" alt="사진3">
+    <img src="./images/pic_4.jpg" alt="사진4">
+    <img src="./images/pic_5.jpg" alt="사진5">
+    <img src="./images/pic_6.jpg" alt="사진6">
+    <img src="./images/pic_7.jpg" alt="사진7">
+    <img src="./images/pic_8.jpg" alt="사진8">
+    <img src="./images/pic_9.jpg" alt="사진9">
+  </div> -->
+  
+  <img id="image" src="./images/pic_1.jpg" alt="사진들">
+
+  <button type="button" onclick="">이전</button>
+  <button type="button" onclick="">다음</button>
+  <script>
+    for(let i = 0; i < 9; i++){
+      let img = new images();
+      img.src = `./images/pic_${i}.jpg`;
+
+    }
+  </script>
+</body>
+</html>

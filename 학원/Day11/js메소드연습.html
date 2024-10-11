@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+
+    document.write(fruits + '<br>');
+
+    
+    document.write(fruits.join('*') + '<br>');
+
+    // let arr = fruits.pop();
+    // document.write(arr);
+
+    fruits.push("Kiwi");
+    document.write(fruits.push());
+
+
+    document.write(fruits + '<br>');
+    document.write(fruits.shift());
+    document.write(fruits.unshift("Lemon"));
+    document.write(fruits + '<br>');
+    //8번 : delete로 지운 자리는 비어있게 된다!
+
+    const GIRLS = ["Cecilie", "Lone"];
+    const BOYS = ["Emil", "Tobias", "Linus"];
+
+    let HUM = GIRLS.concat(BOYS);
+
+    document.write(HUM + '<br>');
+
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Tobias", "Linus"];
+    const arr3 = ["Robin", "Morgan"];
+    
+    let arrPlus = arr1.concat(arr2);
+    let arrResult = arrPlus.concat(arr3);
+
+    document.write(arrResult + '<br>');
+
+    let yung = arr1.join("Peter");
+    document.write(yung + '<br>');
+
+    fruits.splice(2,1, "Lemon","Kiwi","Apple");
+    
+    document.write(fruits);
+
+  </script>
+</body>
+</html>

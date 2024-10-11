@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src=""></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    h1{
+      text-align: center;
+      margin-top: 50px;
+      font-size: 50px;
+      color: rgb(255, 107, 132);
+      /* border: 1px solid #fff; */
+      position: relative;
+      z-index: 100;
+      text-shadow: 2px 0px 15px dodgerblue;
+    }
+    p{
+      color: #fff;
+      font-size: 80px;
+      font-weight: 900;
+      position: absolute;
+      top: 10px;
+      left: 480px;
+    }
+    body{
+      background-color: #fff6ea;
+    }
+    #game{
+      margin-inline: auto;
+      margin-top: 30px;
+      width: 600px;
+      border: 1px solid skyblue;
+      border-radius: 10px;
+      padding-left: 70px;
+      padding-block: 50px;
+      box-sizing: border-box;
+      
+
+    }
+    button{
+      width: 150px;
+      aspect-ratio: 1;
+      border: 1px solid skyblue;
+      border-radius: 10px;
+      margin: 2px;
+      background-color: pink;
+      font-size: 25px;
+      font-weight: 300;
+      color: #fff;
+      cursor: pointer;
+    }
+     button:hover{
+      background-color: skyblue;
+      font-weight: 800;
+     }
+  </style>
+</head>
+<body>
+  <h1>Button Game</h1>
+  <p>Button Game</p>
+  <div id="game"></div>
+  <script>
+    let text = "";
+    let num = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    let answer = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+
+    const LEFT = -1; //왼쪽기준
+    const RIGHT = 1; //오른쪽기준
+    const UP = -3; //위 기준
+    const DOWN = 3; // 아래 기준
+
+    //번호를 랜덤으로 섞는 함수
+    function shuffle(){
+      num.sort((a,b) => {
+        return Math.random() - 0.5
+      });
+    }
+
+    //전체 행 열 만들어서 HYML에 넣는 함수
+    
+    function display(){
+      text = "";
+      let idx = 0; // 인덱스값
+
+      for(let i = 0; i < 3; i++){
+        for(let j = 0; j < 3; j++){
+          text += `<button onclick='move(${idx}, ${num[idx]})'>${num[idx]}</button>`;
+          idx++; // 숫자들의 인덱스값을 알아낸다
+        }
+        text += `<br>` //총 3번 넘어가면서 3행 3열이 생긴다 
+      }
+      document.getElementById('game').innerHTML = text; 
+      //id값이 game태그에게 넣는다
+    }
+
+    // 0(공백)을 찾는? 함수
+    function whereZero(idx, btnNum){ // 각 숫자의 인덱스값과 위치를 알아낸다
+      if(idx % 3 !== 0){ //왼쪽 열의 인덱스들 0 3 6
+        if(num[idx + LEFT] === 0){
+          return LEFT; //-1 반환
+        }
+      }
+      if(idx % 3 !== 2){ // 맨 오른쪽 열의 인덱스들 2 5 8
+        if(num[idx + RIGHT] === 0){
+          return RIGHT;
+        }
+      }
+      
+      if((idx + UP) >= 0){ //맨 위 행의 인덱스들 0 1 2
+        if(num[idx + UP] === 0){
+          return UP;
+        }
+      }
+      if((idx + DOWN) < num.length){ //맨 아래 행의 인덱스 6 7 8 
+        if(num[idx + DOWN] === 0){ //num의 전체 길이와 비교
+          return DOWN;
+        }
+      } 
+      return -999; 
+    }
+    
+    //바로 근처의 숫자를 움직이는 함수
+    function move(idx, btnNum){
+      let pointNumber = whereZero(idx, btnNum);
+
+      if(pointNumber !== -999){ 
+        
+        if(pointNumber === LEFT){
+          num[idx + LEFT] = btnNum;
+          num[idx] = 0;
+        }
+        else if(pointNumber === RIGHT){
+          num[idx + RIGHT] = btnNum;
+          num[idx] = 0;
+        }
+        else if(pointNumber === UP){
+          num[idx + UP] = btnNum;
+          num[idx] = 0;
+        }
+        else if(pointNumber === DOWN){
+          num[idx + DOWN] = btnNum;
+          num[idx] = 0;
+        }
+        
+        display(); // 
+        if(result()){
+          alert("정답이지롱~");
+        }
+      }
+
+    }
+
+    function result(){
+      for(let i = 0; i < num.length; i++){
+        if(num[i] !== answer[i]){
+          return false;
+        }
+      }
+      return true;
+    } // num answer 정답일치 했을 때 true
+
+    function init(){
+      shuffle();
+      display();
+    }
+
+    window.onload = init; //윈도우 로드됐을때 화면구현되게
+  </script>
+</body>
+</html>
