@@ -5,13 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    *{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+    }
     /* .keyBoard{
       width: 100%;
+    } */
+    .wordDisplay{
+      margin: 0 auto;
+      width: 1000px;
+      display: flex;
+      font-size: 30px;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: rgb(255, 222, 228);
+    }
+    .wordDisplay li.letter{
+      display: block;
+      text-align: center;
+      padding: 10px;
+      align-items: center;
+      width: 100px;
+      margin: 5px;
+      aspect-ratio: 1;
+      background-color: skyblue;
+    }
+    /* .wordDisplay li.guessesd{
+      align-items: center;
     } */
     .keyBoard button{
       width: 50px;
       aspect-ratio: 1;
       background-color: pink;
+      text-transform: uppercase;
     }
     .keyBoard button[disabled]{
       opacity: 0.5;
@@ -31,76 +61,6 @@
   </style>
 </head>
 <body>
-  <script>
-    const hangmanImage = document.querySelector(".hangmanBox img");
-    const wordDisplay = document.querySelector(".wordDisplay");
-    const guessesText = document.querySelector(".guesses p");
-    const keydiv = document.querySelector(".keyBoard");
-    const gameModal = document.querySelector(".gamemodal");
-
-    let currentWord;
-    let wrongcount = 0;
-    let correctLetter = []
-    const maxGuesses = 7;
-
-    const wordList = [
-    {word: "abcdefg", hint: "에이비씨디"},
-    {word: "yunggwa", hint: "권윤경"},
-    {word: "yujin", hint: "송유진"},
-    {word: "minju", hint: "김민주"},
-    ];
-
-    const getrandomWord = function(){
-      const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
-      currentWord = word;
-      // document.write(word, hint);
-      document.querySelector(".hint p").innerText = hint;
-      wordDisplay.innerHTML = word.split("").map(function(){`<li class="letter"></li>`}).join("");
-    }
-
-    const gameOver = function(isVictory){
-      setTimeout(function(){
-        gameModal.classList.add("show");
-      }, 300);
-    }
-
-    const initGame = function(button, clickedLetter){
-      if(currentWord.includes(clickedLetter)){
-        // console.log(clickedLetter, "is exist on the word");
-        [...currentWord].forEach((letter, index) => {
-          if(letter === clickedLetter){
-            correctLetter.push(letter);
-            wordDisplay.querySelectorAll("if")[index].innerText = letter;
-            wordDisplay.querySelectorAll("if")[index].classList.add("guessesd");
-          }
-        })
-      }else {
-        // console.log(clickedLetter, "is not exist on the word");
-        wrongcount++;
-        hangmanImage.src = `${wrongcount}.svg` //이미지 들어가는
-      }
-      button.disabled = true;
-      guessesText.innerText = `${wrongcount} / ${maxGuesses} `;
-
-      if(wrongcount === maxGuesses){
-        return gameOver(false);
-      }
-      if(correctLetter.length === currentWord.length){
-        return gameOver(true);
-      }
-    }
-    
-    //반복문돌리면서 버튼만들기
-    for(let i = 97; i <= 122; i++){
-      const button = document.createElement("button");
-      
-      button.innerText = String.fromCharCode(i);
-      keydiv.appendChild(button); 
-      button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));                                                                                                                                                                                                      
-    }
-    getrandomWord();
-    // initGame();
-  </script>
   <div class="gamemodal">
     <div class="content">
       <img src="" alt="">
@@ -161,5 +121,76 @@
       </div>
     </div>
   </div>
+  <script>
+    const hangmanImage = document.querySelector(".hangmanBox img");
+    const wordDisplay = document.querySelector(".wordDisplay");
+    const guessesText = document.querySelector(".guesses p");
+    const keydiv = document.querySelector(".keyBoard");
+    const gameModal = document.querySelector(".gamemodal");
+
+    let currentWord;
+    let wrongcount = 0;
+    let correctLetter = []
+    const maxGuesses = 7;
+
+    const wordList = [
+    {word: "abcdefg", hint: "에이비씨디"},
+    {word: "yunggwa", hint: "권윤경"},
+    {word: "yujin", hint: "송유진"},
+    {word: "minju", hint: "김민주"},
+    ];
+
+    const getrandomWord = function(){
+      const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
+      currentWord = word;
+      // document.write(word, hint);
+      document.querySelector(".hint p").innerText = hint;
+      wordDisplay.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join("");
+    }
+
+    const gameOver = function(isVictory){
+      setTimeout(function(){
+        gameModal.classList.add("show");
+      }, 300);
+    }
+
+    const initGame = function(button, clickedLetter){
+      if(currentWord.includes(clickedLetter)){
+        // console.log(clickedLetter, "is exist on the word");
+        [...currentWord].forEach((letter, index) => {
+          if(letter === clickedLetter){
+            correctLetter.push(letter);
+            wordDisplay.querySelectorAll("li")[index].innerText = letter;
+            wordDisplay.querySelectorAll("li")[index].classList.add("guessesd");
+          }
+        })
+      }else {
+        // console.log(clickedLetter, "is not exist on the word");
+        wrongcount++;
+        hangmanImage.src = `${wrongcount}.svg` //이미지 들어가는
+      }
+      button.disabled = true;
+      guessesText.innerText = `${wrongcount} / ${maxGuesses} `;
+
+      if(wrongcount === maxGuesses){
+        return gameOver(false);
+      }
+      if(correctLetter.length === currentWord.length){
+        return gameOver(true);
+      }
+    }
+    
+    //반복문돌리면서 버튼만들기
+    for(let i = 97; i <= 122; i++){
+      const button = document.createElement("button");
+      
+      button.innerText = String.fromCharCode(i);
+      keydiv.appendChild(button); 
+      button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));                                                                                                                                                                                                      
+    }
+
+    getrandomWord();
+    // initGame();
+  </script>
 </body>
 </html>
