@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .keyBoard{
+      width: 100%;
+    } */
+    .keyBoard button{
+      width: 50px;
+      aspect-ratio: 1;
+      background-color: pink;
+    }
+    .keyBoard button[disabled]{
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .gamemodal{
+      display: flex;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 999;
+      transition: opacity 0.4s ease;
+    }
+    .gamemodal.show{
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const hangmanImage = document.querySelector(".hangmanBox img");
+    const wordDisplay = document.querySelector(".wordDisplay");
+    const guessesText = document.querySelector(".guesses p");
+    const keydiv = document.querySelector(".keyBoard");
+    const gameModal = document.querySelector(".gamemodal");
+
+    let currentWord;
+    let wrongcount = 0;
+    let correctLetter = []
+    const maxGuesses = 7;
+
+    const wordList = [
+    {word: "abcdefg", hint: "에이비씨디"},
+    {word: "yunggwa", hint: "권윤경"},
+    {word: "yujin", hint: "송유진"},
+    {word: "minju", hint: "김민주"},
+    ];
+
+    const getrandomWord = function(){
+      const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
+      currentWord = word;
+      // document.write(word, hint);
+      document.querySelector(".hint p").innerText = hint;
+      wordDisplay.innerHTML = word.split("").map(function(){`<li class="letter"></li>`}).join("");
+    }
+
+    const gameOver = function(isVictory){
+      setTimeout(function(){
+        gameModal.classList.add("show");
+      }, 300);
+    }
+
+    const initGame = function(button, clickedLetter){
+      if(currentWord.includes(clickedLetter)){
+        // console.log(clickedLetter, "is exist on the word");
+        [...currentWord].forEach((letter, index) => {
+          if(letter === clickedLetter){
+            correctLetter.push(letter);
+            wordDisplay.querySelectorAll("if")[index].innerText = letter;
+            wordDisplay.querySelectorAll("if")[index].classList.add("guessesd");
+          }
+        })
+      }else {
+        // console.log(clickedLetter, "is not exist on the word");
+        wrongcount++;
+        hangmanImage.src = `${wrongcount}.svg` //이미지 들어가는
+      }
+      button.disabled = true;
+      guessesText.innerText = `${wrongcount} / ${maxGuesses} `;
+
+      if(wrongcount === maxGuesses){
+        return gameOver(false);
+      }
+      if(correctLetter.length === currentWord.length){
+        return gameOver(true);
+      }
+    }
+    
+    //반복문돌리면서 버튼만들기
+    for(let i = 97; i <= 122; i++){
+      const button = document.createElement("button");
+      
+      button.innerText = String.fromCharCode(i);
+      keydiv.appendChild(button); 
+      button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));                                                                                                                                                                                                      
+    }
+    getrandomWord();
+    // initGame();
+  </script>
+  <div class="gamemodal">
+    <div class="content">
+      <img src="" alt="">
+      <h3>Game Over</h3>
+      <button class="playagain">다시하기</button>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hangmanBox">
+      <img src="" alt="">
+      <h1>HangMan Game</h1>
+    </div>
+    <div class="gameBox">
+      <ul class="wordDisplay">
+        <!-- <li class="letter"></li>
+        <li class="letter"></li>
+        <li class="letter"></li>
+        <li class="letter"></li>
+        <li class="letter"></li>
+        <li class="letter"></li> -->
+      </ul>
+
+      <h3 class="hint">
+        Hint:
+        <p></p>
+      </h3>
+      <h3 class="guesses">
+        Incorrect guesses:
+        <p>0 / 7</p>
+      </h3>
+      <div class="keyBoard">
+        <!-- <button>a</button>
+        <button>b</button>
+        <button>c</button>
+        <button>d</button>
+        <button>e</button>
+        <button>f</button>
+        <button>g</button>
+        <button>h</button>
+        <button>i</button>
+        <button>j</button>
+        <button>k</button>
+        <button>l</button>
+        <button>n</button>
+        <button>m</button>
+        <button>o</button>
+        <button>p</button>
+        <button>q</button>
+        <button>r</button>
+        <button>s</button>
+        <button>t</button>
+        <button>u</button>
+        <button>v</button>
+        <button>w</button>
+        <button>x</button>
+        <button>y</button>
+        <button>z</button> -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
