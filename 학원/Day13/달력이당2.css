@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Lilita+One&family=Londrina+Sketch&family=Permanent+Marker&family=Sixtyfour+Convergence&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+  color: brown;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-family: "Gaegu";
+}
+body{
+  background-color: rgb(255, 253, 241);
+}
+
+h1{
+  font-family: "Londrina Sketch";
+  font-size: 50px;
+  color: pink;
+  text-shadow: 0 0 5px rgb(185, 255, 186);
+  margin-top: 10px;
+}
+table, tr, td, th{
+  border: 0.5px solid pink;
+  background-color: rgb(255, 222, 222);
+  font-size: 20px;
+  padding: 25px 30px;
+  border-radius: 20px;
+}
+table{
+  border: none;
+}
+th{
+  background-color:  rgb(208, 255, 209);
+  color: rgb(255, 152, 169);
+  font-size: 25px;
+}
+td{
+  background-color: #fff;
+  color: rgb(173, 84, 84);
+}
+ul{
+  font-size: 50px;
+  color: pink;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #fff;
+}
+li.year{
+  position: relative;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 70px;
+}
+li.next{
+  position: absolute;
+  top: 170px; 
+  right: 400px;
+  font-size: 15px;
+  background-color: #e5ffdf;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+li.prev{
+  position: absolute;
+  top: 170px;
+  left: 400px;
+  font-size: 15px;
+  background-color: #e5ffdf;
+  padding: 5px 15px;
+  border-radius: 10px;
+}

@@ -39,24 +39,6 @@
       return lastDayMonth[month];
     }
 
-    function getTime (){
-      let nowday = now.getDate();
-      let nowmin = now.getMinutes();
-      let ampm;
-      let hours = now.getHours();
-      if(hours >= 12){
-        hours -= 12;
-        ampm = "오후";
-      }else{
-        ampm = "오전";
-      }
-
-      hours = (hours === 0) ? 12 : hours;
-      if(nowmin < 10){
-        nowmin = "0" + nowmin;
-      }
-      return ampm + hour + ":" + nowmin;
-    }
 
     let table = `<table>`;
     table += `<caption> ${year}년 ${month + 1}월</caption>`;

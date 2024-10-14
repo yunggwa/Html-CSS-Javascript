@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  const testImage = document.querySelector(".imgeBox img");
+  const button = document.querySelector("button");
+
+  for(let i = 1; i < 10; i++){
+
+    testImage.src = `../Day11/images/pic_${i}.jpg`
+  }
+
+</script>
+<body>
+  <div class="imageBox">
+    <img src="../Day11/images/pic_1.jpg" alt="images">
+  </div>
+  <button type="button" onclick="testImage">이전</button>
+  <button type="button" onclick="testImage">다음</button>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    
+    document.write(fruits + "<br>");
+
+    document.write(fruits.join("*") + "<br>");
+
+    fruits.pop();
+    document.write(fruits.pop() + "<br>");
+
+    fruits.push("Kiwi");
+    document.write(fruits.push() + "<br>");
+    document.write(fruits + "<br>");
+    document.write(fruits.unshift("Lemon") + "<br>");
+    document.write(fruits + "<br>");
+    //8번 delete를 통해서 지우면 배열에 공백이 남고 pop이나 shift를 쓰면 공백까지 삭제된다
+    
+    const myGirls = ["Cecilie", "Lone"];
+    const myBoys = ["Emil", "Robias", "Linus"];
+
+    const human = myGirls.concat(myBoys);
+    document.write(human + "<br>");
+
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Robias", "Linus"];
+    const arr3 = ["Robin", "MOrgan"];
+
+    const arr4 = arr1.concat(arr2);
+    const arr5 = arr4.concat(arr3);
+    document.write(arr5 + "<br>");
+
+    const fruits02 = ["Banana", "Orange", "Apple", "Mango"];
+    fruits02.splice(2,2, "Lemon", "Kiwi");
+    document.write(fruits02 + "<br>");
+
+    
+  </script>
+</body>
+</html>

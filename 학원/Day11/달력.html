@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>달력</title>
+  <style>
+    .header,
+    .content {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #009879;
+      ;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    th,
+    td {
+      padding: 12px 15px;
+    }
+
+    thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+
+    tbody tr td:hover {
+      background-color: #d3d3d3;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #009879;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #007f67;
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      background-color: #005f4f;
+      transform: scale(0.9);
+    }
+
+    .today {
+      background-color: #007f67;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="calendar">
+    <div class="header">
+      <h1></h1>
+      <button class="btn" onclick="changeCal(1)">작년</button>
+      <button class="btn" onclick="changeCal(2)">저번달</button>
+      <button class="btn today" onclick="changeCal(5)">오늘</button>
+      <button class="btn" onclick="changeCal(3)">다음달</button>
+      <button class="btn" onclick="changeCal(4)">내년</button>
+    </div>
+    <td style=""></td>
+    <div class="content">
+      <div id="cal"></div>
+    </div>
+  </div>
+
+
+  <script>
+    let now = new Date();
+    let curYear = now.getFullYear();    // 올해 년도를 구한다.
+    let curMonth = now.getMonth() + 1;      // 현재 달을 구한다.
+    function getLastDay(year, month) {
+      const lastDayOfMon = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+      // 윤년 계산
+      const isLeapYear = (year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0);
+
+      // 2월 처리
+      if (isLeapYear) {
+        lastDayOfMon[1] = 29;
+      }
+      return lastDayOfMon[month];
+    }
+    function viewCal(Year, Month) {
+      let weekDays = ["일", "월", "화", "수", "목", "금", "토"];
+      let firstDay = new Date(Year, Month - 1, 1).getDay();
+      let lastDay = getLastDay(Year, Month - 1);
+      let weekNum = Math.ceil((firstDay + lastDay) / 7);
+      let date = 1;
+      let dateCounter = 0;
+
+      let table = `<table><thead><tr>`;
+      // 요일 추가
+      weekDays.forEach(day => {
+        table += `<th>${day}</th>`;
+      });
+      table += `</tr></thead><tbody>`;
+
+      for (let i = 0; i < weekNum; i++) {
+        table += `<tr>`;
+        for (let j = 0; j < 7; j++) {
+          if (dateCounter < firstDay || date > lastDay) {
+            table += `<td>&nbsp;</td>`; // 빈 셀
+          }
+          else {
+            if (date == now.getDate() && Year == now.getFullYear() && Month - 1 == now.getMonth()) {
+              table += `<td style="background-color: #007f67;color: white;">${date++}</td>`; // 날짜 채우기
+            }
+            else {
+              table += `<td>${date++}</td>`; // 날짜 채우기
+            }
+          }
+          dateCounter++;
+        }
+        table += `</tr>`;
+      }
+      table += `</tbody></table>`;
+      document.querySelector(`#cal`).innerHTML = table;
+      document.querySelector(`h1`).textContent = `${Year}년  ${Month}월`;
+    }
+    function changeCal(option) {
+      if (option == 1) {
+        curYear--;
+      }
+      else if (option == 2) {
+        if (curMonth == 1) {
+          curMonth = 12;
+          curYear--;
+        }
+        else curMonth--;
+      }
+      else if (option == 3) {
+        if (curMonth == 12) {
+          curMonth = 1;
+          curYear++;
+        }
+        else curMonth++;
+      }
+      else if (option == 4) {
+        curYear++;
+      }
+      else if (option == 5) {
+        now = new Date();
+        curYear = now.getFullYear();    // 올해 년도를 구한다.
+        curMonth = now.getMonth() + 1;      // 현재 달을 구한다.
+      }
+      viewCal(curYear, curMonth);
+    }
+    viewCal(curYear, curMonth);
+  </script>
+</body>
+
+</html>
